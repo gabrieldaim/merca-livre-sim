@@ -15,13 +15,9 @@ Abra o endereço indicado pelo Vite. Para gerar uma versão estática: `npm run 
 
 ## Como jogar
 
-1. Escolha um produto em **Dragão Express** e compre um lote. A compra ocupa capacidade futura do depósito.
-2. Publique o anúncio no **Merca Livre**, definindo preço e gasto diário em publicidade.
-3. Avance os dias. As compras chegam depois de 2 ou 3 dias; vendas são calculadas com demanda variável, preço, concorrência, publicidade e reputação.
-4. No **Banco Capivara**, invista para reduzir o intervalo entre avanços de 5 para 4, 3 e 2 minutos.
+1. Compre um lote no **Dragão Express**. Ele chega após 5 a 7 minutos reais, conforme o produto. O upgrade de frete reduz o prazo de compras futuras.
+2. Quando houver unidades em estoque, publique o produto no **Merca Livre** e defina o preço. Produtos sem estoque não podem ser anunciados; anúncios esgotados aguardam reposição.
+3. A cada minuto, o jogo sorteia visitantes para cada anúncio com estoque. Parte deles compra; alguns levam mais de uma unidade. Preço, concorrência e reputação influenciam as chances.
+4. No **Banco Capivara**, invista em marketing (visitas), conversão (compradores), retenção (unidades por comprador) e frete (entrega).
 
-A partida é salva automaticamente no `localStorage` deste navegador. Não há contas nem sincronização. Os primeiros 5 minutos só começam depois do primeiro avanço. A demanda é uma estimativa; o resultado real varia a cada dia.
-
-## Escopo desta versão
-
-O jogo tem oito produtos, taxas do marketplace, defeitos ocasionais na chegada, vendas perdidas por falta de estoque, crédito de recuperação e extrato. Os números são parâmetros iniciais para balanceamento, não uma simulação econômica real. Não há compras com dinheiro real.
+O jogo simula os ciclos perdidos quando você volta à aba, sem precisar deixar o navegador aberto. A partida fica no `localStorage` deste navegador: não há servidor, contas ou sincronização entre dispositivos. Ao reabrir após mais de sete dias, o jogo processa até sete dias de ciclos para manter o desempenho. A versão anterior da partida é migrada automaticamente; anúncios antigos sem estoque são pausados. Não há compras com dinheiro real.
