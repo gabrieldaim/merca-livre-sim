@@ -1,6 +1,6 @@
 # Merca Livre
 
-Um simulador casual de comércio em navegador. Pesquise produtos no Dragão Express, compre estoque, publique anúncios no Merca Livre e acompanhe o caixa no Banco Capivara. As marcas são paródias fictícias.
+Um simulador casual de comércio em navegador. Compre lotes no Dragão Express, anuncie produtos em estoque no Merca Livre e invista no Banco Capivara. As marcas são paródias fictícias.
 
 ## Rodar localmente
 
@@ -11,13 +11,17 @@ npm install
 npm run dev
 ```
 
-Abra o endereço indicado pelo Vite. Para gerar uma versão estática: `npm run build`.
+Para gerar os arquivos estáticos: `npm run build`.
 
 ## Como jogar
 
-1. Compre um lote no **Dragão Express**. Ele chega após 5 a 7 minutos reais, conforme o produto. O upgrade de frete reduz o prazo de compras futuras.
-2. Quando houver unidades em estoque, publique o produto no **Merca Livre** e defina o preço. Produtos sem estoque não podem ser anunciados; anúncios esgotados aguardam reposição.
-3. A cada minuto, o jogo sorteia visitantes para cada anúncio com estoque. Parte deles compra; alguns levam mais de uma unidade. Preço, concorrência e reputação influenciam as chances.
-4. No **Banco Capivara**, invista em marketing (visitas), conversão (compradores), retenção (unidades por comprador) e frete (entrega).
+1. A categoria **Achadinhos** começa liberada, com cinco itens de até R$ 15 de custo. A compra reserva espaço no depósito antes da entrega.
+2. Cada categoria tem seu prazo base de frete: 1, 2, 3, 5, 8 e 12 minutos. Logística reduz o prazo e o custo dos próximos lotes, com entrega mínima de um minuto.
+3. Quando as unidades chegarem, publique o anúncio no **Merca Livre**. Só há anúncio novo com estoque. Ao esgotar, o anúncio para de receber visitas até a reposição.
+4. A cada minuto, o jogo sorteia visitas, compradores e pedidos. Alguns clientes compram várias unidades ou produtos diferentes. Marketing aumenta visitas; conversão aumenta compradores; retenção aumenta o tamanho dos pedidos.
+5. Desbloqueie a categoria seguinte após vender a quantidade exigida na categoria anterior **e** pagar a taxa. O depósito começa com 20 espaços e pode ser ampliado. Veículos usam vagas em um pátio separado.
+6. Na aba **Relatórios**, veja o funil de cada ciclo, produtos, pedidos com nomes fictícios, receita, taxas e totais acumulados. Os 120 ciclos recentes têm detalhes; os totais continuam acumulados.
 
-O jogo simula os ciclos perdidos quando você volta à aba, sem precisar deixar o navegador aberto. A partida fica no `localStorage` deste navegador: não há servidor, contas ou sincronização entre dispositivos. Ao reabrir após mais de sete dias, o jogo processa até sete dias de ciclos para manter o desempenho. A versão anterior da partida é migrada automaticamente; anúncios antigos sem estoque são pausados. Não há compras com dinheiro real.
+## Salvamento
+
+A partida fica no `localStorage` deste navegador. Não há servidor, contas ou sincronização entre dispositivos. Ao voltar à página, o jogo simula os ciclos perdidos; após mais de sete dias, processa os últimos sete dias para preservar o desempenho. Partidas da versão anterior são migradas preservando dinheiro, estoque e anúncios; o depósito antigo mantém sua capacidade para não invalidar os lotes existentes. Os preços e probabilidades são parâmetros de jogo sujeitos a balanceamento. Não há transações com dinheiro real.
